@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Users } from '../model/users';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,10 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  users: Users[] = new Array();
+
+  constructor(private userService: UsersService) {
+    this.users = this.userService.getUsers();
+  }
 
 }

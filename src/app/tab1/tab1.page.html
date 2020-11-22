@@ -1,17 +1,67 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Perfiles
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-slides *ngIf="users.length>0">
+    <ion-slide *ngFor="let user of users; index as i">
+          <ion-card>
+            <img src="https://scontent.ftpq1-1.fna.fbcdn.net/v/t31.0-8/14361229_1448168888532849_5357015551025037030_o.jpg?_nc_cat=111&ccb=2&_nc_sid=e3f864&_nc_eui2=AeGLK6t3KfKcgQ-3NDK2oit7LVNZIR786CAtU1khHvzoIKIbFSVDX5J9k1hlonA9mwLgOUk6PEBYWeCalzjtLhNw&_nc_ohc=tBrOOz8AI0AAX8TrpjK&_nc_ht=scontent.ftpq1-1.fna&oh=56367f3e37cf96d6a6d51fe71a774452&oe=5FDB0482" block="100%">
+            <ion-card-header>
+              <ion-card-title>{{user.name}}</ion-card-title>
+              <ion-card-subtitle>{{user.state}}</ion-card-subtitle>
+            </ion-card-header> 
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+            <ion-card-content>
+              <ion-grid>
+                <ion-row> 
+                  <ion-col>
+                    <ion-fab-button color="danger">
+                      {{user.love}}
+                    </ion-fab-button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-fab-button color="primary">
+                      {{user.like}}
+                    </ion-fab-button>
+                  </ion-col>
+                  <ion-col>
+                    
+                  </ion-col>
+                  <ion-col>
+                    
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <div>
+                <div>
+                  <ion-row>
+                  <ion-button horizontal="start" *ngFor="let hobby of user.hobby; index as j" color="success">{{user.hobby[j]}}</ion-button>
+                </ion-row>
+                </div>
+                <div>
+                <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+                  <ion-fab-button color="dark">
+                    <ion-icon md="add" ios="add"></ion-icon>
+                  </ion-fab-button>
+                  <ion-fab-list side="top">
+                    <ion-fab-button color="danger">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </ion-fab-button>
+                    <ion-fab-button>
+                      <ion-icon name="thumbs-up-sharp"></ion-icon>
+                    </ion-fab-button>
+                  </ion-fab-list>
+                </ion-fab>
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+  </ion-slide>
+</ion-slides>
 </ion-content>
+
