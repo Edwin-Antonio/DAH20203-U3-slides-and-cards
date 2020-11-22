@@ -15,4 +15,17 @@ export class Tab1Page {
     this.users = this.userService.getUsers();
   }
 
+  increaseLike(type: number, position: number): void{
+    if ( type === 0 )
+    {
+      this.users[position].like ++;
+    }
+  }
+
+  increaseLove(type: number, position: number): void{
+    if ( type === 0 )
+    {
+      this.users[position].love ++;
+    }
+  }
 }

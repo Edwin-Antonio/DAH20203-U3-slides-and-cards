@@ -12,16 +12,16 @@ export class UsersService {
     this.users.push({
       name: 'Edwin Antonio',
       state: 'Tepic',
-      like: '23',
-      love: '32',
+      like: 0,
+      love: 0,
       hobby: ['Tiro', 'Arquería', 'Juegos', 'Ajedrez', 'DINERO']
     });
     this.users.push({
       name: 'MIguel Leopoldo',
       state: 'Tepic',
-      like: '40',
-      love: '13',
-      hobby: ['Videojuegos', 'FUtbol']
+      like: 40,
+      love: 13,
+      hobby: ['Videojuegos', 'Futbol']
     });
    }
 

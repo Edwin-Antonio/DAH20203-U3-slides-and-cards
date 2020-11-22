@@ -17,26 +17,13 @@
             </ion-card-header> 
 
             <ion-card-content>
-              <ion-grid>
-                <ion-row> 
-                  <ion-col>
-                    <ion-fab-button color="danger">
+                    <ion-badge color="danger" *ngIf="user.love">
                       {{user.love}}
-                    </ion-fab-button>
-                  </ion-col>
-                  <ion-col>
-                    <ion-fab-button color="primary">
+                    </ion-badge>
+                    &nbsp;
+                    <ion-badge color="primary" *ngIf="user.like">
                       {{user.like}}
-                    </ion-fab-button>
-                  </ion-col>
-                  <ion-col>
-                    
-                  </ion-col>
-                  <ion-col>
-                    
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
+                    </ion-badge>
               <div>
                 <div>
                   <ion-row>
@@ -49,10 +36,10 @@
                     <ion-icon md="add" ios="add"></ion-icon>
                   </ion-fab-button>
                   <ion-fab-list side="top">
-                    <ion-fab-button color="danger">
+                    <ion-fab-button color="danger" (click)="increaseLove(0, i)">
                       <ion-icon name="heart-outline"></ion-icon>
                     </ion-fab-button>
-                    <ion-fab-button>
+                    <ion-fab-button (click)="increaseLike(0, i)">
                       <ion-icon name="thumbs-up-sharp"></ion-icon>
                     </ion-fab-button>
                   </ion-fab-list>
